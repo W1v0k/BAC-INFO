@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int n, i = 1, copie, sumcif;
+int main()
+{
+    cin >> n;
+    while (i <= n)
+    {
+        copie = i;
+        sumcif = 0;
+        while (copie > 0)
+        {
+            sumcif = sumcif + copie % 10;
+            copie /= 10;
+        }
+        if (sumcif % 2 == 0)
+            cout << i << ' ';
+        i++;
+    }
+    return 0;
+}

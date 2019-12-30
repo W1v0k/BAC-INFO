@@ -1,0 +1,21 @@
+//Numerele pare se vor afla pe primele pozitii din sir,in oridine crescatoare a pozitiilor
+//Numerele impare se vor afla dupa numerele pare, in ordine descrescatoare
+
+#include <iostream>
+using namespace std;
+int d = 0, e = 0, n, i, v[1001], y[1001], z[1001];
+int main()
+{
+    cin >> n;
+    for (i = 1; i <= n; i++)
+        cin >> v[i];
+    for (i = 1; i <= n; i++)
+        if (v[i] % 2 != 0)
+            y[d++] = v[i];
+        else z[e++] = v[i];
+    for (i = 0; i <= e - 1; i++)
+        cout << z[i] << ' ';
+    for (i = d-1 ; i >= 0; i--)
+        cout << y[i] << ' ';
+    return 0;
+}

@@ -1,0 +1,199 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+void sumacifrelor(int n)
+{
+    int s = 0, c;
+    while (n != 0)
+    {
+        c = n % 10;
+        s = s + c;
+        n /= 10;
+    }
+    cout<< " Suma cifrelor numarului n este: ";
+    cout<< s;
+}
+
+void numaruldecifre(int n)
+{
+    int nr=0;
+    while (n != 0)
+    {
+        nr++;
+        n /= 10;
+    }
+    cout << "Numarul de cifre ale numarului n este: ";
+    cout << nr;
+}
+
+void eliminarecifrepare(int n)
+{
+    int nr = 0, p = 1, uc;
+    while (n != 0)
+    {
+        uc = n % 10;
+        if (uc % 2 == 1)
+        {
+            nr = nr + uc * p;
+            p *= 10;
+        }
+        n /= 10;
+    }
+    cout << "Numarul format din doar cifre impare este: " << nr;
+}
+
+void cifmin_cifmax(int n)
+{  
+    int cifmin=9, cifmax=0, uc;
+    while (n != 0)
+    {
+        uc = n % 10;
+        if (uc < cifmin) cifmin = uc;
+        if (uc > cifmax) cifmax = uc;
+        n /= 10;
+    }
+    cout << "Cifra minima este: " << cifmin << ' ' << "; iar cifra maxima este: " << cifmax;
+}
+
+void inversnumar(int n)
+{
+    int inv = 0, c;
+    while (n != 0)
+    {
+        c = n % 10;
+        inv = inv * 10 + c;
+        n /= 10;
+    }
+    cout << "Inversul numarului n este: ";
+    cout << inv;
+}
+
+void alternativainversnumar(int n)
+{
+    int copien = 0, inv = 0, nr = 0,uc=0;
+    copien = n;
+    while (copien > 0)
+    {
+        nr++;
+        copien /= 10;
+    }
+    while (n > 0)
+    {
+        uc = n % 10;
+        inv = inv + uc * pow(10, nr - 1);
+        n /= 10;
+        nr--;
+    }
+    cout << "Inversul numarului este: ";
+    cout << inv;
+}
+
+void palindrom(int n)
+{
+    int inv = 0, c = 0, copie = 0;
+    copie = n;
+    while (n != 0)
+    {
+        c = n % 10;
+        inv = inv * 10 + c;
+        n /= 10;
+    }
+    if (copie == inv)
+        cout << "Este palindrom";
+    else cout << "Nu este palindrom";
+}
+
+void numarprim(int n)
+{
+    int ok = 1, d = 2;
+    while (d <= n / 2 && ok == 1)
+        if (n % d == 0)
+            ok = 0;
+        else 
+            d++;
+    if (ok == 1)
+        cout << "Este prim";
+    else cout << "Nu este prim";
+}
+
+void alternativanumarprim(int n)
+{
+    int i = 2, esteprim = 1;  //consideram i=2 deoarece numerele prime sunt considerate mai mari ca 1 ; 
+                              // consideram calitatea de esteprim adevarat
+    while (i < n)             //se parcurg numerele de la 2 la n-1
+    {
+        if (n % i == 0)      //daca n se divide la i
+            esteprim = 0;    //nu este prim
+        i++;
+    }
+    if (n == 1)
+        esteprim = 0;
+    if (esteprim == 1)
+        cout << "Este prim"; else cout << "Nu este prim";
+}
+
+void factoriprimi(int n)
+{
+    int d=2, p;
+    while (n > 1)
+    {
+        p = 0;
+        while (n % d == 0)
+        {
+            p = p + 1;
+            n = n / d;
+        }
+        if (p != 0)       // if(p)
+            cout << d << "^" << p << " ";
+        d++;
+    }
+}
+
+void divizoriproprii(int n)       // 1<divizori<n/2
+{
+    int d = 2;
+    while (d <= n / 2)
+    {
+        if (n % d == 0)
+            cout << d << ' ';
+        d++;
+    }
+}
+
+void cmmdc(int a, int b)
+{
+    while (a != b)
+        if (a > b)
+            a = a - b; else b = b - a;
+    cout << "Cel mai mare divizor comun dintre cele doua numere este: " << a;
+}
+
+void cmmmc(int a, int b)
+{
+    int x=0, y=0;
+    x = a;
+    y = b;
+    while (x != y)
+        if (x > y) x = x - y;
+        else y = y - x;
+    cout << "Cel mai mic multiplu comun dintre cele doua numere este: " << (a * b) / x;
+}
+
+int main()
+{
+    // sumacifrelor(23421);
+    //numaruldecifre(23421);
+    //inversnumar(23421);
+    //alternativainversnumar(23421);
+    //palindrom(12221);  palindrom(23421);
+    //numarprim(13); numarprim(23421);
+    //alternativanumarprim(13); alternativanumarprim(23421);
+    //factoriprimi(23421); factoriprimi(121);
+    //divizoriproprii(23421); divizoriproprii(20);
+    //cmmdc(23421, 200);   // daca cmmdc=1, numerele sunt prime intre ele
+    //cmmdc(123234, 234);
+    //cmmmc(30, 50);
+    //eliminarecifrepare(23421);
+    //cifmin_cifmax(23421);
+    return 0;
+}

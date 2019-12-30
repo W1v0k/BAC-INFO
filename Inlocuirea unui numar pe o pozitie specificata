@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int v[100001], i, n, pozitie, x;
+int main()
+{
+    cin >> n;
+    for (i = 1; i <= n; i++)
+        cin >> v[i];
+    cout << "Precizati numarul: "; cin >> x;
+    cout << "Precizati pozitia: "; cin >> pozitie;
+    for (i = 1; i <= n; i++)
+        v[pozitie] = x;
+    for (i = 1; i <= n; i++)
+        cout << v[i] << ' ';
+    return 0;
+}

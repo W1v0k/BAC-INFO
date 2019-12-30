@@ -1,0 +1,27 @@
+//Un numar natural se numeste ABC daca are exact a cifre, prima cifra este b si ultima cifra este c.
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int a, b, c, nrcifre = 0, nr, copienr, uc, x, y, prima;
+int main()
+{
+    cout << "Introduceti numarul a :"; cin >> a;
+    cout << "Introduceti numarul b :"; cin >> b;
+    cout << "Introduceti numarul c :"; cin >> c;
+    cout << "Introduceti numarul:"; cin >> nr;
+    copienr = nr;
+    while (nr > 0)
+    {
+        nrcifre++;
+        nr /= 10;
+    }
+    uc = copienr % 10;
+    y = nrcifre - 1;
+    x = pow(10, y);
+    prima = copienr / x;
+    if (a == nrcifre && b == prima && c == uc)
+        cout << "Da, numarul este numar ABC";
+    else cout << "Nu, numarul nu este numar ABC";
+    return 0;
+}

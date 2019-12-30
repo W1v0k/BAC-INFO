@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+int a, ca, uc, inv = 0, da = 2, dinv = 2, oka = 1, okinv = 1;
+int main()
+{
+    cin >> a;
+    ca = a;
+    while (a > 0)
+    {
+        uc = a % 10;
+        inv = inv * 10 + uc;
+        a = a / 10;
+    }
+    while (da < ca)
+    {
+        if (ca % da == 0)
+            oka = 0;
+        da++;
+    }
+    if (ca == 1)
+        oka = 0;
+    while (dinv < inv)
+    {
+        if (inv % dinv == 0)
+            okinv = 0;
+        dinv++;
+        if (dinv == 1)
+            okinv = 0;
+    }
+    if (okinv == 1 && oka == 1)
+        cout << "Da, numarul si inversul sau sunt numere prime";
+    else cout << "Nu, numarul si inversul sau nu sunt numere prime";
+    return 0;
+}

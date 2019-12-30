@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int n, v[10001], i, x, p;
+int main()
+{
+    cin >> n;
+    for (i = 1; i <= n; i++)
+        cin >> v[i];
+    cout << "Inserati numarul: "; cin >> x;
+    cout << "Inserati poztia: "; cin >> p;
+    n++; //Crestem lungimea sirului pentru noul element pe noua pozitie
+    for (i = n; i > p; i--)  // Mutam elementele cu o  
+        v[i] = v[i - 1];     // pozitie la dreapta
+    v[p] = x;                //adaugarea numarului
+    for (i = 1; i <= n; i++)
+        cout << v[i] << ' ';
+    return 0;
+}

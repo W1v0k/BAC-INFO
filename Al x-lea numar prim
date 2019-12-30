@@ -1,0 +1,29 @@
+/*Explicare algoritm: 
+y-o variabila de control
+i-divizorii
+divizori-utilizat pentru a verifica daca numarul are vre-un divizor
+nr-numerele verificate daca sunt prime
+OBS: Cu while se parcurg toate numerele pe care le verificam daca sunt prime. Apoi numaram numerele.Din iesirea lui while, nr-ul este
+cu unul in plus => se va afisa cu nr-1.
+*/
+
+#include <iostream>
+using namespace std;
+int y = 0, nr, divizori, i, x;
+int main()
+{
+    cin >> x;
+    nr = 2;
+    while (y < x)
+    {
+        divizori = 0;
+        for (i = 1; i <= nr; i++)
+            if (nr % i == 0)
+                divizori++;
+        if (divizori == 2)  //numarul este prim
+            y++;
+        nr++;
+    }
+    cout << nr - 1;
+    return 0;
+}

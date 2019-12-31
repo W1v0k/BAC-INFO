@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int linii, coloane, matrice[40][40];
+int liniitrans, coloanetrans, transpusa[40][40]; 
+int i, j;
+int main()
+{
+    cin >> linii >> coloane;
+    for (i = 1; i <= linii; i++)
+        for (j = 1; j <= coloane; j++)
+            cin >> matrice[i][j];
+    liniitrans = coloane;
+    coloanetrans = linii;
+    for (i = 1; i <= linii; i++)
+        for (j = 1; j <= coloane; j++)
+            transpusa[j][i] = matrice[i][j];
+    for (i = 1; i <= liniitrans; i++)
+    {
+        for (j = 1; j <= coloanetrans; j++)
+            cout << transpusa[i][j] << ' ';
+        cout << endl;
+    }    
+    return 0;
+}

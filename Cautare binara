@@ -1,0 +1,25 @@
+//Se da un sir v cu n numere ordonate crescator si un numar x. Sa se afle daca exista un element cu valoarea x in sir.
+
+#include <iostream>
+using namespace std;
+int n, v[10001], x, i;
+int main()
+{   
+    cin >> n;
+    for(i=1;i<=n;i++)
+    cin >> v[i];
+    cin >> x;
+    int st = 1, dr = n, m;
+    while (st < dr)
+    {
+        m = (st + dr) / 2;
+        if (v[m] < x)
+            st = m + 1;
+        else
+            dr = m;
+    }
+    if (v[st] == x)
+        cout << x << " se gaseste in sir";
+    else cout << x << " nu se gaseste in sir";
+    return 0;
+}

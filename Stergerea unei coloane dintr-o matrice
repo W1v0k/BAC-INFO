@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int n, m, k, i, j, a[400][400];
+int main()
+{
+    cout << "Introduceti numarul de linii ale matricei: "; cin >> n;
+    cout << "Introduceti numarul de coloane ale matricei: "; cin >> m;
+    cout << "Introduceti matricea cu " << n << " linii si " << m << " coloane: " << '\n';
+    for (i = 1; i <= n; i++)
+        for (j = 1; j <= m; j++)
+            cin >> a[i][j];
+    cout << "Introduceti coloana pe care vreti sa o stergeti: "; cin >> k;
+    for (j = k; j <= m - 1; j++)
+        for (i = 1; i <= n; i++)
+            a[i][j] = a[i][j + 1];
+    m--;
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= m; j++)
+            cout << a[i][j] << ' ';
+        cout << endl;
+    }    
+    return 0;
+}

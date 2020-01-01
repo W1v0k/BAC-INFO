@@ -1,0 +1,22 @@
+/*
+Pe prima linie numerele 1,2,...,n, iar pe coloana 1,2,...,m.Celelalte elemente sunt date de relatia a[i][j] = a[i - 1][j] + a[i][j - 1].
+*/
+
+#include <iostream>
+using namespace std;
+int a[101][101], i, j, m, n;
+int main()
+{
+    cin >> m >> n;
+    for (i = 1; i <= m; i++)
+    {
+        for (j = 1; j <= n; j++)
+            if (i == 1)
+                a[i][j] = j;
+            else if (j == 1)
+                a[i][j] = i;
+            else a[i][j] = a[i - 1][j] + a[i][j - 1];
+    }
+    cout << a[m][n] % 10;
+    return 0;
+}

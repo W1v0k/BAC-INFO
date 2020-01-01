@@ -1,0 +1,31 @@
+/*
+Programul va afisa pe ecran numerele de ordine ale coloanelor pentru care produsul elementelor situate pe ele este maxim.
+*/
+
+#include <iostream>
+using namespace std;
+int a[101][101], i, j, m, n, maxim = -1, p = 1;
+int main()
+{
+    cin >> m >> n;
+    for (i = 1; i <= m; i++)
+        for (j = 1; j <= n; j++)
+            cin >> a[i][j];
+    for (j = 1; j <= n; j++)
+    {
+        p = 1;
+        for (i = 1; i <= m; i++)
+            p = p * a[i][j];
+        if (p >= maxim)
+            maxim = p;
+    }
+    for (j = 1; j <= n; j++)
+    {
+        p = 1;
+        for (i = 1; i <= m; i++)
+            p = p * a[i][j];
+        if (p == maxim)
+            cout << j << ' ';
+    }
+    return 0;
+}

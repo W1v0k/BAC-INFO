@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int a[26][26], m, n, i, j;
+int main()
+{
+    cin >> n >> m;
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= m; j++)
+            if (i == 1)
+                a[i][j] = j;
+            else if (i == 2)
+                a[i][j] = 2 * m - j + 1;
+            else a[i][j] = a[i - 2][j] + 10;
+    }
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= m; j++)
+            cout << a[i][j] << ' ';
+        cout << endl;
+    }
+    return 0;
+}

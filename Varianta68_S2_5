@@ -1,0 +1,25 @@
+/*
+Afiseaza pe ecran ultima cifra a produsului elementelor pozitive aflate pe linii cu numere de ordine pare si coloane cu numere de ordine
+impare.Daca nu exista elemente pozitive care respecta conditiile se va afisa mesajul "NU EXISTA".
+*/
+
+#include <iostream>
+using namespace std;
+int a[52][52], i, j, m, n, p = 1, ok = 0;
+int main()
+{
+    cin >> m >> n;
+    for (i = 1; i <= m; i++)
+        for (j = 1; j <= n; j++)
+            cin >> a[i][j];
+    for (i = 1; i <= m; i++)
+    {
+        for (j = 1; j <= n; j++)
+            if (i % 2 == 0 && j % 2 != 0 && a[i][j] >= 0)
+                p = p * a[i][j];
+        ok = 1;
+    }
+    if (ok == 0)
+        cout << "Nu exista"; else cout << p % 10;
+    return 0;
+}

@@ -1,0 +1,28 @@
+/*
+Se verifica daca matricea este triunghiulara superior.O matrice se numeste triunghiulara superior daca toate elementele aflate 
+sub diagonala principala a ei sunt nule.
+*/
+
+#include <iostream>
+using namespace std;
+int a[52][52], n, i, j, ok = 1;
+int main()
+{
+    cin >> n;
+    for (i = 1; i <= n; i++)
+        for (j = 1; j <= n; j++)
+            cin >> a[i][j];
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= i - 1; j++)
+            if (a[i][j] != 0)
+            {
+                ok = 0;
+                break;
+            }
+    }
+    if (ok == 0)
+        cout << "Nu este triunghiulara superior";
+    else cout << "Este triunghiulara superior";
+    return 0;
+}

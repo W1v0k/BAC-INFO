@@ -1,0 +1,32 @@
+/*
+Elementele situate pe diagonala principala vor fi egale cu 2.
+Elementele situate sub diagonala principala vor fi egale cu 3.
+Elementele situate deasupra diagonalei principale vor fi egale cu 1.
+*/
+
+#include <iostream>
+using namespace std;
+int a[25][25], i, j, n;
+int main()
+{
+	cin >> n;
+	for (i = 1; i <= n; i++)
+	{
+		for (j = 1; j <= n; j++)
+			if (i == j)
+				a[i][j] = 2;
+	}
+	for (i = 1; i <= n; i++)
+		for (j = 1; j <= i - 1; j++)
+			a[i][j] = 3;
+	for (i = 1; i <= n; i++)
+		for(j=i+1;j<=n;j++)
+		a[i][j] = 1;
+	for (i = 1; i <= n; i++)
+	{
+		for (j = 1; j <= n; j++)
+			cout << a[i][j] << ' ';
+		cout << endl;
+	}
+	return 0;
+}

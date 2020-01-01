@@ -1,0 +1,24 @@
+/*
+Programul modifica tabloul, permutand circular cu k pozitii spre stanga, elementele acestuia si afiseaza pe ecran,pe o singura linie,
+separate prin cate un spatiu, elementele tabloului obtinut.
+*/
+
+#include <iostream>
+using namespace std;
+int i, aux, v[101], j, k, n;
+int main()
+{
+    cin >> n >> k;
+    for (i = 1; i <= n; i++)
+        cin >> v[i];
+    for (j = 1; j <= k; j++)
+    {
+        aux = v[1];
+        for (i = 1; i <= n - 1; i++)
+            v[i] = v[i + 1];
+        v[n] = aux;
+    }
+    for (i = 1; i <= n; i++)
+        cout << v[i] << ' ';
+    return 0;
+}

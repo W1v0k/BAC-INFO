@@ -1,0 +1,27 @@
+/*
+Prima coloana - cifra unitatilor numarului dat
+A doua coloana - cifra zecilor numarului dat
+A treia coloana - cifra sutelor 
+Ultima coloana - cifra miilor numarului dat
+*/
+
+#include <iostream>
+using namespace std;
+int n, a[5][5], i, j;
+int main()
+{
+    cin >> n;
+    for (j = 1; j <= 4; j++)
+    {
+        for (i = 1; i <= 4; i++)
+            a[i][j] = n % 10;
+        n = n / 10;
+    }
+    for (i = 1; i <= 4; i++)
+    {
+        for (j = 1; j <= 4; j++)
+            cout << a[i][j] << ' ';
+        cout << endl;
+    }
+    return 0;
+}

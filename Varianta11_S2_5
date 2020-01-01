@@ -1,0 +1,21 @@
+//Programul determina valorile minime de pe fiecare linie a matricei si le afiseaza pe o linie a ecranului separate prin cate un spatiu.
+
+#include <iostream>
+using namespace std;
+int a[11][11], m, n, i, j, MINIM;
+int main()
+{
+    cin >> m >> n;
+    for (i = 1; i <= m; i++)
+        for (j = 1; j <= n; j++)
+            cin >> a[i][j];
+    for (i = 1; i <= m; i++)
+    {
+        MINIM = a[i][1];
+        for (j = 1; j <= n; j++)
+            if (a[i][j] < MINIM)
+                MINIM = a[i][j];
+        cout << MINIM<<' ';
+    }
+    return 0;
+}

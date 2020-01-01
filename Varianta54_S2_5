@@ -1,0 +1,27 @@
+/*
+Elementele de pe liniile de rang impar egale cu prima cifra a numarului x si elementele de pe liniile cu rang par egale cu ultima cifra
+a numarului x.
+*/
+
+#include <iostream>
+using namespace std;
+int a[9][9], i, j, n, x;
+int main()
+{
+    cin >> n;
+    cin >> x;
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+            if (i % 2 == 0)
+                a[i][j] = x % 10;
+            else a[i][j] = x / 10;
+    }
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << endl;
+    }
+    return 0;
+}

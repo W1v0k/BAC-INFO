@@ -1,0 +1,27 @@
+/* 
+Fiecare element aflat pe prima linie sau pe prima coloana din matrice este egal cu suma dintre numarul coloanei si a liniei pe care se 
+afla, iar fiecare dintre celelalte elemente este egal cu suma dintre elementul vecin aflat pe aceeasi linie cu el,dar pe coloana din 
+stanga sa si elementul vecin aflat pe aceeasi coloana cu el, dar pe linia de deasupra sa.
+*/
+
+#include <iostream>
+using namespace std;
+int a[11][11], i, j, n;
+int main()
+{
+    cin >> n;
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+            if (i == 1 || j == 1)
+                a[i][j] = i + j;
+            else a[i][j] = a[i][j - 1] + a[i - 1][j];
+    }
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << endl;
+    }
+    return 0;
+}

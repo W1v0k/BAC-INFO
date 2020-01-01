@@ -1,0 +1,24 @@
+/*Fiecare element din matrice aflat pe o linie impara va fi egal cu numarul liniei pe care se afla si fiecare element aflat pe o linie
+para va fi egal cu numarul coloanei pe care se afla. */
+
+#include <iostream>
+using namespace std;
+int a[21][21], i, j, n;
+int main()
+{
+    cin >> n;
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+            if (i % 2 != 0)
+                a[i][j] = i;
+            else a[i][j] = j;
+    }
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << endl;
+    }
+    return 0;
+}

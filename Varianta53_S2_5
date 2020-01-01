@@ -1,0 +1,27 @@
+/*
+Programul interschimba elementele tabloului bidimensional de pe linia x cu cele de pe linia y.
+*/
+
+#include <iostream>
+using namespace std;
+int a[11][21], m, n, i, j, x, y, aux = 0;
+int main()
+{
+    cin >> m >> n;
+    cin >> x >> y;
+    for (i = 1; i <= m; i++)
+        for (j = 1; j <= n; j++)
+            cin >> a[i][j];
+    for (j = 1; j <= n; j++)
+    {
+        aux = a[y][j];
+        a[y][j] = a[x][j];
+        a[x][j] = aux;
+    }
+    for(i=1;i<=m;i++)
+    {   for(j=1;j<=n;j++)
+        cout << a[i][j] << ' ';
+        cout << endl;
+    }
+    return 0;
+}

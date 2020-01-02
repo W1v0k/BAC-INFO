@@ -1,0 +1,28 @@
+/*
+Elementele primului patrat concentric,separate prin cate un spatiu. Patratul este parcurs in sensul acelor de ceasornic incepand
+din coltul sau stanga-sus.Primul patrat concentric este format din prima si ultima linie, prima si ultima coloana a tabloului.
+*/
+
+#include <iostream>
+using namespace std;
+int a[24][25], i, j, n;
+int main()
+{
+    cin >> n;
+    for (i = 1; i <= n; i++)
+        for (j = 1; j <= n; j++)
+            cin >> a[i][j];
+    i = 1;
+    for (j = 1; j <= n; j++)
+        cout << a[i][j] << ' ';
+    j = n;
+    for (i = 2; i <= n; i++)
+        cout << a[i][j] << ' ';
+    i = n;
+    for (j = n - 1; j >= 1; j--)
+        cout << a[i][j] << ' ';
+    j = 1;
+    for (i = n - 1; i >= 2; i--)
+        cout << a[i][j] << ' ';
+    return 0;
+}

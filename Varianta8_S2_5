@@ -1,0 +1,27 @@
+/*
+Tabloul va fi construit astfel incat, parcurgand tabloul linie cu linie de sus in jos si fiecare linie de la stanga la dreapta, sa se
+obtina sirul primelor n*p patrate perfecte impare, ordonate strict crescator.
+*/
+
+#include <iostream>
+using namespace std;
+int a[16][16], i, j, n, p, k = 1;
+int main()
+{
+    cin >> n >> p;
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= p; j++)
+        {
+            a[i][j] = k * k;
+            k += 2;
+        }
+    }
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= p; j++)
+            cout << a[i][j] << ' ';
+        cout << endl;
+    }
+    return 0;
+}

@@ -1,0 +1,28 @@
+/*
+Elementele de pe linia 1 au toate valoarea egala cu cifra unitatilor numarului citit
+Elementele de pe linia 2 au toate valoarea egala cu cifra zecilor numarului citit
+Elementele de pe linia 3 au toate valoarea egala cu cifra sutelor numarului citit
+Elementele de pe linia 4 au toate valoarea egala cu cifra miilor numarului citit
+Elementele de pe linia 5 au toate valoarea egala cu cifra zecilor de mii numarului citit
+*/
+
+#include <iostream>
+using namespace std;
+int a[6][6], i, j, n;
+int main()
+{
+	cin >> n;
+	for (i = 1; i <= 5; i++)
+	{
+		for (j = 1; j <= 5; j++)
+			a[i][j] = n % 10;
+		n /= 10;
+	}
+	for (i = 1; i <= 5; i++)
+	{
+		for (j = 1; j <= 5; j++)
+			cout << a[i][j] << ' ';
+		cout << endl;
+	}
+	return 0;
+}

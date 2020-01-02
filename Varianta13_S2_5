@@ -1,0 +1,32 @@
+/*
+Elementele aflate pe diagonala secundara sunt toate nule=0
+Elementele aflate deasupra diagonalei secundare sunt toate 1
+Elementele aflate sub diagonala secundara sunt toate 2
+*/
+
+#include <iostream>
+using namespace std;
+int a[40][40], n, i, j;
+int main()
+{
+    cin >> n;
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+        {
+            if (i + j <= n)
+                a[i][j] = 1;
+            if (i + j == n + 1)
+                a[i][j] = 0;
+            if (i + j >= n + 2)
+                a[i][j] = 2;
+        }
+    }
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << endl;
+    }
+    return 0;
+}

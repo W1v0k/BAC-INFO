@@ -1,0 +1,35 @@
+/*
+Elementele aflate pe diagonala secundara a matricei vor primi valoarea 0
+Elementele de pe prima linie, cu exceptia celui aflat pe diagonala secundara vor primi valoarea n
+Elementele de pe a doua linie, cu exceptia celui aflat pe diagonala secundara vor primi valoarea n-1
+....
+Elementele de pe ultima linie cu exceptia celui aflat pe diagonala secundara vor primi valoarea 1
+*/
+
+#include <iostream>
+using namespace std;
+int a[25][25], i, j, n, cn;
+int main()
+{
+    cin >> n;
+    cn = n;
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+            a[i][j] = cn;
+        cn--;
+    }
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+            if (i + j == n + 1)
+                a[i][j] = 0;
+    }
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << endl;
+    }
+    return 0;
+}

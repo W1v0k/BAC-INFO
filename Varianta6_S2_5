@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+char c[256];
+int i;
+int main()
+{
+	cin.get(c,255);
+	c[0] = c[0] + 'A' - 'a';
+	for (i = 1; i < strlen(c); i++)
+  {
+		if (c[i] != ' ' && c[i - 1] == ' ')
+			c[i] = c[i] + 'A' - 'a';
+	}
+	cout<<c;
+	return 0;
+
+}

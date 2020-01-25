@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+    char a[100], * p, c;
+    cin.get(a, 100);
+    cin >> c;
+    p = strchr(a, c);
+    while (p)
+    {
+        cout << "Pozitia " << p - a << endl;
+        p++;
+        p = strchr(p, c);
+    }
+    return 0;
+}

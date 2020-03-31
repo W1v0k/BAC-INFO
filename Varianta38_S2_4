@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int i, j, n, a[32][32], Min, p = 1,ip,jp;
+int main()
+{
+    cin >> n;
+    for (i = 1; i <= n; i++)
+        for (j = 1; j <= n; j++)
+            cin >> a[i][j];
+    for (j = 1; j <= n; j++)
+    {
+        Min = a[1][j];
+        for (i = 1; i <= n; i++)
+            if (a[i][j] <= Min)
+            {
+                Min = a[i][j];
+                ip = i; jp = j;
+            }
+        if (ip + jp == n + 1)
+            p = p * a[ip][jp];
+    }
+    cout << p % 10;
+    return 0;
+}

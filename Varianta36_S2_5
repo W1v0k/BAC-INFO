@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int i, j, n, a[32][32], m, Min;
+int main()
+{
+    cin >> n >> m;
+    for (i = 1; i <= n; i++)
+        for (j = 1; j <= m; j++)
+            cin >> a[i][j];
+    for (j = m; j >= 1; j--)
+    {
+        Min = a[1][j];
+        for (i = 2; i <= n; i++)
+            if (a[i][j] < Min)
+                Min = a[i][j];
+        cout << Min << ' ';
+    }
+    return 0;
+}

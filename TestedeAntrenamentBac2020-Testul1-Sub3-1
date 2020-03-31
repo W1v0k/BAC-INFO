@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int n, d, p;
+void putere(int n, int& d, int& p)
+{
+    int f, var = 0;
+    for (f = 2; f <= n / 2 && n; f++)
+    {
+        var = 0;
+        while (n % f == 0)
+        {
+            var++;
+            n /= f;
+        }
+        if (p < var)
+        {
+            p = var;
+            d = f;
+        }
+        else if (p == var)
+            if (d < f)
+                d = f;
+    }
+    cout << d << ' ' << p;
+
+}
+int main()
+{
+    cin >> n;
+    putere(n, d, p);
+    return 0;
+}

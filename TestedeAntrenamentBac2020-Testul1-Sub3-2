@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int a[20][400],n,k,i,j,val=0,l=0;
+int main()
+{
+    cin >> n >> k;
+    for (i = 1; i <= n; i++)
+    {
+        val = i;
+        for (l = 1; l <= k; l++)
+            a[i][l] = val;
+        for (j = k+1; j <= k*n; j += k)
+        {
+            for (l = j ; l <= k+j; l++)
+                a[i][l] = val+1;
+            val++;
+        }
+    }
+    
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n*k; j++)
+            cout << a[i][j] << ' ';
+        cout << endl;
+    }
+    return 0;
+}

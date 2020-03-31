@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int i, j, n, a[21][21],nr;
+int main()
+{
+    cin >> n;
+    nr = 2;
+    for (i = 1; i <= n; i++)
+    for (j = 1; j <= n; j++)
+    {
+        if (nr % 2 == 0 && nr % 3 != 0)
+            a[i][j] = nr; 
+        else {
+            a[i][j] = nr + 2;
+            nr = nr + 2;
+        }
+        nr = nr + 2;
+        }
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << endl;
+    }
+    return 0;
+}

@@ -1,0 +1,24 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+ofstream g("bac.txt");
+int x, y, aux;
+int main()
+{
+    cin >> y >> x;
+    if (x > y)
+    {
+        aux = y;
+        y = x;
+        x = aux;
+    }
+    g << y << ' ' << x << ' ';
+    while (x * y != 1)
+    {
+        aux = 3 * x - y;
+        g << aux << ' ';
+        y = x;
+        x = aux;
+    }
+    return 0;
+}
